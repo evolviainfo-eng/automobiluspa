@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#0A0B0D"/>
+  <!-- honeycomb-cell hexagon -->
+  <path d="M32 12 L49 22 L49 42 L32 52 L15 42 L15 22 Z"
+        fill="none" stroke="#E8712B" stroke-width="2.4" stroke-linejoin="round"/>
+  <!-- gloss sweep across the panel -->
+  <path d="M20 39 C27 30, 37 30, 45 24" fill="none" stroke="#F2F1ED" stroke-width="2.6"
+        stroke-linecap="round" opacity="0.92"/>
+  <!-- droplet / bead -->
+  <circle cx="32" cy="34" r="3.1" fill="#F2F1ED"/>
+  <circle cx="30.9" cy="32.9" r="1" fill="#0A0B0D" opacity="0.35"/>
+</svg>

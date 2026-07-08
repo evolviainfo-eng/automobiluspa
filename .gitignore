@@ -1,0 +1,9 @@
+.DS_Store
+fs-server.js
+.claude/
+assets/raw/
+assets/ig-list.tsv
+assets/contact-sheet.jpg
+assets/cs-*.jpg
+assets/hero-cands.jpg
+assets/final-review.jpg
