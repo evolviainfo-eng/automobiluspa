@@ -109,27 +109,9 @@ html{scrollbar-color:var(--accent) var(--bg)}
    HERO — full-bleed + interactive inspection lamp
    ============================================================ */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate;padding-top:clamp(6rem,13vh,8.5rem)}
-.hero__media{position:absolute;inset:0;z-index:-2;cursor:crosshair}
+.hero__media{position:absolute;inset:0;z-index:-2}
 .hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
-.hero__img--base{filter:brightness(.62) saturate(.92) contrast(1.02)}
-/* the "lamp": brighter graded copy revealed through a soft radial mask that follows the pointer */
-.hero__img--glow{
-  filter:brightness(1.18) saturate(1.12) contrast(1.06);
-  --mx:50%;--my:44%;--lr:min(34vw,420px);
-  -webkit-mask-image:radial-gradient(circle var(--lr) at var(--mx) var(--my),#000 0,rgba(0,0,0,.55) 46%,transparent 72%);
-          mask-image:radial-gradient(circle var(--lr) at var(--mx) var(--my),#000 0,rgba(0,0,0,.55) 46%,transparent 72%);
-  opacity:0;transition:opacity .6s var(--ease);
-}
-.hero__media.lamp-on .hero__img--glow{opacity:1}
-.hero__lamp-hint{
-  position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);
-  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.62);
-  padding:.5rem .85rem;border:1px solid rgba(255,255,255,.16);border-radius:100px;
-  background:rgba(10,11,13,.3);backdrop-filter:blur(6px);pointer-events:none;
-  opacity:0;transition:opacity .5s var(--ease);white-space:nowrap;
-}
-.hero__media:hover .hero__lamp-hint{opacity:0}
-.hero.hint-show .hero__lamp-hint{opacity:1}
+.hero__img--base{filter:brightness(.72) saturate(1.02) contrast(1.04)}
 .hero__grad{position:absolute;inset:0;z-index:-1;
   background:linear-gradient(180deg,rgba(10,11,13,.55) 0%,rgba(10,11,13,.15) 34%,rgba(10,11,13,.55) 68%,rgba(10,11,13,.96) 100%);}
 .hero__grad::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 15% 90%,rgba(10,11,13,.7),transparent 55%)}
@@ -370,7 +352,6 @@ a.c-v:hover{color:var(--accent)}
   .nav__phone span{display:none}
   .nav__book{--ph:1.05rem}
   .callbar{display:flex}
-  .hero__lamp-hint{display:none}
   .hero__eyebrow{letter-spacing:.1em;gap:.45rem;margin-bottom:1rem}
   .sec-head--split{flex-direction:column;align-items:flex-start}
   .sec-head--split .sec-head__sub{text-align:left}

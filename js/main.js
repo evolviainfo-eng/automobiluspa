@@ -66,42 +66,7 @@
     addEventListener('visibilitychange', () => { if (!document.hidden) forceInView(); });
   }
 
-  /* ================= HERO — inspection lamp ================= */
   const hero = $('#hero');
-  const media = $('#lamp');
-  const glow = $('.hero__img--glow');
-  if (hero && media && glow) {
-    const setLamp = (px, py, r) => {
-      glow.style.setProperty('--mx', px + '%');
-      glow.style.setProperty('--my', py + '%');
-      if (r) glow.style.setProperty('--lr', r);
-    };
-    if (finePointer && !reduce) {
-      hero.classList.add('hint-show');
-      let raf = 0, tx = 50, ty = 44, cx = 50, cy = 44;
-      const loop = () => { cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16; setLamp(cx.toFixed(1), cy.toFixed(1)); raf = requestAnimationFrame(loop); };
-      media.addEventListener('pointerenter', () => { media.classList.add('lamp-on'); if (!raf) loop(); });
-      media.addEventListener('pointermove', (e) => {
-        const b = media.getBoundingClientRect();
-        tx = ((e.clientX - b.left) / b.width) * 100;
-        ty = ((e.clientY - b.top) / b.height) * 100;
-        hero.classList.remove('hint-show');
-      });
-      media.addEventListener('pointerleave', () => { media.classList.remove('lamp-on'); cancelAnimationFrame(raf); raf = 0; });
-    } else if (!reduce) {
-      // mobile / coarse pointer: light gently drifts across the panel on its own
-      media.classList.add('lamp-on');
-      let t = 0;
-      const drift = () => {
-        t += 0.006;
-        const px = 50 + Math.sin(t) * 30;
-        const py = 44 + Math.sin(t * 1.7) * 16;
-        setLamp(px.toFixed(1), py.toFixed(1), 'min(52vw,380px)');
-        requestAnimationFrame(drift);
-      };
-      drift();
-    }
-  }
 
   /* ================= WORKS rail ================= */
   const rail = $('#rail');
